@@ -5,6 +5,14 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaristaLabs.Espresso.Common", "BaristaLabs.Espresso.Common\BaristaLabs.Espresso.Common.csproj", "{27B3A3DF-820E-44B5-870F-CD0C9582DAFB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{F317FF4A-0D79-4B8C-A621-DE1CDEFDEA4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharePoint", "SharePoint", "{DD45A627-0958-4A59-AA7B-3C61A87B01AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{CE7EB950-478A-4F33-A451-F79411DB1529}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNet", "AspNet", "{81B6982B-BDA9-4251-B3D9-D3884BB42D3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +26,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27B3A3DF-820E-44B5-870F-CD0C9582DAFB} = {F317FF4A-0D79-4B8C-A621-DE1CDEFDEA4F}
+		{DD45A627-0958-4A59-AA7B-3C61A87B01AD} = {CE7EB950-478A-4F33-A451-F79411DB1529}
+		{81B6982B-BDA9-4251-B3D9-D3884BB42D3E} = {CE7EB950-478A-4F33-A451-F79411DB1529}
 	EndGlobalSection
 EndGlobal
