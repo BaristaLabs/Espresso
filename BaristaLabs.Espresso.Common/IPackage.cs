@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// Gets the symantic version of the package.
+        /// Gets the semantic version of the package.
         /// </summary>
         string Version
         {
