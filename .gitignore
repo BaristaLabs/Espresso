@@ -188,3 +188,8 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+# V8 Files
+Engines/v8/v8/build/
+Engines/v8/v8/lib/
+Engines/v8/v8/include/

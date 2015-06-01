@@ -1,1 +1,1 @@
-Various core packages are contained here. Most packages are contained within seperate GitHub projects.
+Espresso
