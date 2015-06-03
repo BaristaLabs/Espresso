@@ -1,4 +1,4 @@
-﻿namespace BaristaLabs.Espresso.Engine.V8
+﻿namespace BaristaLabs.Espresso.Common
 {
     /// <summary>
     /// Defines script access settings for type members.

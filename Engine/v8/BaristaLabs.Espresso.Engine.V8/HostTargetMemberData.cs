@@ -60,6 +60,8 @@
 //       
 namespace BaristaLabs.Espresso.Engine.V8
 {
+    using Common;
+
     using System;
     using System.Reflection;
 
