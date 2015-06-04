@@ -79,7 +79,7 @@ set GYP_MSVS_VERSION=2013
 :Main
 
 echo Build mode: %mode%
-cd Engines\v8\v8
+cd Engine\v8\v8
 if errorlevel 1 goto Exit
 
 if /i "%download%"=="true" goto Download

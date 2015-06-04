@@ -28,8 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{16E682
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v8", "v8", "{BA192552-4E12-425B-B7AF-9C73B9E3AE04}"
 	ProjectSection(SolutionItems) = preProject
-		Engine\v8\Clearscript-MS-PL.txt = Engine\v8\Clearscript-MS-PL.txt
+		Engine\v8\LICENSE.clearscript = Engine\v8\LICENSE.clearscript
+		Engine\v8\v8\LICENSE.v8 = Engine\v8\v8\LICENSE.v8
 		Engine\v8\readme.md = Engine\v8\readme.md
+		Engine\v8\v8\V8Patch.txt = Engine\v8\v8\V8Patch.txt
 		V8Update.cmd = V8Update.cmd
 	EndProjectSection
 EndProject
