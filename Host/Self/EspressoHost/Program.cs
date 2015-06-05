@@ -1,6 +1,8 @@
-﻿namespace BaristaLabsHost
+﻿namespace EspressoHost
 {
+    using BaristaLabs.Espresso.Core;
     using Nancy.Hosting.Self;
+    using Ninject;
     using System;
 
     class Program

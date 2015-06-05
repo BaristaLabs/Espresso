@@ -5,19 +5,19 @@
 
     public class EspressoEngineApplicationStartup : IApplicationStartup
     {
-        //private IFooFactory fooFactory;
-        //public EspressoEngineApplicationStartup(IFooFactory fooFactory)
-        //{
-        //    this.fooFactory = fooFactory;
-        //}
+        private IBaristaFactory m_baristaFactory;
+        public EspressoEngineApplicationStartup(IBaristaFactory baristaFactory)
+        {
+            m_baristaFactory = baristaFactory;
+        }
 
         public void Initialize(IPipelines pipelines)
         {
             pipelines.BeforeRequest.AddItemToStartOfPipeline(ctx => {
-                //var foo = fooFactory.Make();
-                //foo.Bar(ctx);
+                
                 Console.WriteLine("Hi");
-                return null;
+                var barista = m_baristaFactory.AssignBarista(ctx);
+                return barista.Brew(ctx);
             });
         }
     }

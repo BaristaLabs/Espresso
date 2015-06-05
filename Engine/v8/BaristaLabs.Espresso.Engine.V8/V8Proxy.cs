@@ -118,6 +118,10 @@ namespace BaristaLabs.Espresso.Engine.V8
 
         private static Assembly LoadAssembly()
         {
+            if (!Environment.Is64BitProcess)
+                throw new PlatformNotSupportedException("The Espresso V8 Engine is not supported in a 32-bit process. Please verify that you are running in a 64-bit executable.");
+
+
             try
             {
                 return Assembly.Load("BaristaLabs.Espresso.Engine.V8.Native");
@@ -129,9 +133,6 @@ namespace BaristaLabs.Espresso.Engine.V8
             var hLibrary = LoadNativeLibrary();
             try
             {
-                if (!Environment.Is64BitProcess)
-                    throw new PlatformNotSupportedException("The Espresso V8 Engine is not supported in a 32-bit process. Please verify that you are running in a 64-bit executable.");
-
                 var fileName = "BaristaLabs.Espresso.Engine.V8.Native.dll";
                 var messageBuilder = new StringBuilder();
 
