@@ -65,7 +65,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the maximum amount by which the V8 runtime is permitted to grow the stack during script execution.
+        /// Gets or sets the maximum amount by which the runtime is permitted to grow the stack during script execution.
         /// </summary>
         UIntPtr MaxRuntimeStackUsage
         {

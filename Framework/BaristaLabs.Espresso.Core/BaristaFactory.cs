@@ -4,14 +4,18 @@
     using Nancy;
     using Ninject;
 
+    /// <summary>
+    /// Represents a factory which returns IBarista Instances that will process requests.
+    /// </summary>
     public interface IBaristaFactory
     {
         /// <summary>
         /// Returns a concrete IBarista instance to process the request.
         /// </summary>
-        /// <param name="ctx"></param>
-        /// <returns></returns>
-        IBarista AssignBarista(NancyContext ctx);
+        /// <param name="ctx">The nancy context to use</param>
+        /// <param name="version">The version of the Espresso path</param>
+        /// <returns>An IBarista instance that will handle the request.</returns>
+        IBarista AssignBarista(NancyContext ctx, string version);
     }
 
     public class BaristaFactory : IBaristaFactory
@@ -25,12 +29,13 @@
             m_kernel = kernel;
         }
 
-        public IBarista AssignBarista(NancyContext ctx)
+        public IBarista AssignBarista(NancyContext ctx, string version)
         {
-            //TODO: Parse the context.request.url and get the app associated with it using IoC.
-            //Should be a way to do this similar to how Get('url') does it.
+            if (string.IsNullOrWhiteSpace(version))
+                throw new ArgumentNullException("version");
 
-            return m_kernel.Get<IBarista>();
+            var baristaInstance = m_kernel.TryGet<IBarista>(version);
+            return baristaInstance;
         }
     }
 }

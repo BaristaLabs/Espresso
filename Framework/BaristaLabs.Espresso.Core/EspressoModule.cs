@@ -9,9 +9,14 @@
     {
         public override void Load()
         {
-            Bind<IBarista>().To<DefaultBarista>();
 
-            Bind<IBaristaFactory>().To<BaristaFactory>();
+            Bind<IBaristaFactory>()
+                .To<BaristaFactory>()
+                .InSingletonScope();
+
+            Bind<IBarista>()
+                .To<v1.DefaultBarista>()
+                .Named("v1");
 
             ///Bind any IJavaScriptEngine instances in the path.
             Kernel.Bind(x => x

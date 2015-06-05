@@ -11,6 +11,6 @@
     public interface IBarista
     {
 
-        Response Brew(NancyContext ctx);
+        Response Brew(NancyContext ctx, string virtualScriptFilePath);
     }
 }
