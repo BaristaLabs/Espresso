@@ -9,7 +9,7 @@
     using System.Runtime.CompilerServices;
     using System.Threading;
 
-    public sealed class V8ScriptEngine : IJavaScriptEngine
+    public sealed class V8ScriptEngine : IScriptEngine
     {
         #region data
         private ScriptAccess defaultAccess;
@@ -399,7 +399,7 @@
             return Compile(null, code);
         }
 
-        ICompiledScript IJavaScriptEngine.Compile(string code)
+        ICompiledScript IScriptEngine.Compile(string code)
         {
             return Compile(null, code);
         }
@@ -421,7 +421,7 @@
             });
         }
 
-        ICompiledScript IJavaScriptEngine.Compile(string documentName, string code)
+        ICompiledScript IScriptEngine.Compile(string documentName, string code)
         {
             return Compile(documentName, code);
         }
@@ -586,7 +586,7 @@
             return result;
         }
 
-        object IJavaScriptEngine.Evaluate(ICompiledScript compiledScript)
+        object IScriptEngine.Evaluate(ICompiledScript compiledScript)
         {
             var v8CompiledScript = compiledScript as V8Script;
             if (v8CompiledScript == null)
@@ -670,7 +670,7 @@
             Execute(documentName, code, false, discard);
         }
 
-        void IJavaScriptEngine.Execute(ICompiledScript compiledScript)
+        void IScriptEngine.Execute(ICompiledScript compiledScript)
         {
             var v8CompiledScript = compiledScript as V8Script;
             if (v8CompiledScript == null)

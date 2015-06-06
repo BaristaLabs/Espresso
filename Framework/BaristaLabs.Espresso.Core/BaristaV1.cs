@@ -1,6 +1,6 @@
-﻿namespace BaristaLabs.Espresso.Core.v1
+﻿namespace BaristaLabs.Espresso.Core
 {
-    using BaristaLabs.Espresso.Core.Responses;
+    using Responses;
     using Common;
     using Nancy;
     using Nancy.Responses;
@@ -9,11 +9,12 @@
     /// <summary>
     /// Represents a default barista implementation.
     /// </summary>
-    public class DefaultBarista : IBarista
+    [EspressoApi("1")]
+    public class BaristaV1 : IBarista
     {
-        private IJavaScriptEngine m_scriptEngine;
+        private IScriptEngine m_scriptEngine;
 
-        public DefaultBarista(IJavaScriptEngine scriptEngine)
+        public BaristaV1(IScriptEngine scriptEngine)
         {
             if (scriptEngine == null)
                 throw new ArgumentNullException("scriptEngine");

@@ -15,6 +15,6 @@
         /// should avoid expensive operations within this method, or cache the results of such
         /// operations for efficient retrieval during subsequent invocations.
         /// </remarks>
-        void OnExposedToScriptCode(IJavaScriptEngine engine);
+        void OnExposedToScriptCode(IScriptEngine engine);
     }
 }

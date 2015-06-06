@@ -5,7 +5,7 @@
     /// <summary>
     /// Represents a JavaScript object.
     /// </summary>
-    public interface IJavaScriptObject : IExpando, IDynamic
+    public interface IScriptObject : IExpando, IDynamic
     {
     }
 }

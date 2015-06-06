@@ -4,14 +4,16 @@
     using System.Collections.Concurrent;
 
     public class ScriptEnginePool<T>
-        where T : IJavaScriptEngine
+        where T : IScriptEngine
     {
         private ConcurrentBag<T> m_scriptEngines;
         private Func<T> m_scriptEngineGenerator;
 
         public ScriptEnginePool(Func<T> scriptEngineGenerator)
         {
-            if (scriptEngineGenerator == null) throw new ArgumentNullException("scriptEngineGenerator");
+            if (scriptEngineGenerator == null)
+                throw new ArgumentNullException("scriptEngineGenerator");
+
             m_scriptEngines = new ConcurrentBag<T>();
             m_scriptEngineGenerator = scriptEngineGenerator;
         }

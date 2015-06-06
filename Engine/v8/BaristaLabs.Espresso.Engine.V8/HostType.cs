@@ -288,7 +288,7 @@ namespace BaristaLabs.Espresso.Engine.V8
 
         #region IScriptableObject implementation
 
-        void IScriptableObject.OnExposedToScriptCode(IJavaScriptEngine engine)
+        void IScriptableObject.OnExposedToScriptCode(IScriptEngine engine)
         {
             var v8Engine = engine as V8ScriptEngine;
             if (v8Engine != null)

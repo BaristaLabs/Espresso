@@ -56,7 +56,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaristaFactory.cs" />
+    <Compile Include="EspressoApiAttribute.cs" />
     <Compile Include="EspressoJsonNetSerializer.cs" />
     <Compile Include="EspressoModule.cs" />
     <Compile Include="IBarista.cs" />
@@ -65,7 +65,7 @@
     <Compile Include="Responses\ErrorResponse.cs" />
     <Compile Include="Responses\ErrorResponseMessage.cs" />
     <Compile Include="Responses\ScriptEngineExceptionResponse.cs" />
-    <Compile Include="v1\DefaultBarista.cs" />
+    <Compile Include="BaristaV1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

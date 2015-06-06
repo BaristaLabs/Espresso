@@ -31,6 +31,6 @@
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        IJavaScriptObject InstallPackage(IJavaScriptEngine context);
+        IScriptObject InstallPackage(IScriptEngine context);
     }
 }

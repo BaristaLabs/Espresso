@@ -109,6 +109,7 @@
     <Compile Include="V8ScriptEngine.cs" />
     <Compile Include="V8ScriptEngineFlags.cs" />
     <Compile Include="V8ScriptItem.cs" />
+    <Compile Include="V8StandardScriptEngineFactory.cs" />
     <Compile Include="VoidResult.cs" />
   </ItemGroup>
   <ItemGroup>

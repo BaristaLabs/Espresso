@@ -5,7 +5,7 @@
     /// <summary>
     /// Represents a JavaScript engine.
     /// </summary>
-    public interface IJavaScriptEngine : IDisposable
+    public interface IScriptEngine : IDisposable
     {
         /// <summary>
         /// Gets or sets a callback that can be used to halt script execution.

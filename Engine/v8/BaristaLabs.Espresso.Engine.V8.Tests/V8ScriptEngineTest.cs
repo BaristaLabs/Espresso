@@ -21,7 +21,7 @@
     {
         #region setup / teardown
 
-        private IJavaScriptEngine engine;
+        private IScriptEngine engine;
 
         [TestInitialize]
         public void TestInitialize()

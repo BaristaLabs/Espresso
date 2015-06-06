@@ -33,7 +33,7 @@
         private readonly Dictionary<string, object> dictionary;
         private readonly ICollection<KeyValuePair<string, object>> collection;
         private readonly bool isReadOnly;
-        private readonly ConcurrentWeakSet<IJavaScriptEngine> engineSet = new ConcurrentWeakSet<IJavaScriptEngine>();
+        private readonly ConcurrentWeakSet<IScriptEngine> engineSet = new ConcurrentWeakSet<IScriptEngine>();
 
         #endregion
 
@@ -320,7 +320,7 @@
         #region IScriptableObject implementation
 
         [SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Justification = "This member is not expected to be re-implemented in derived classes.")]
-        void IScriptableObject.OnExposedToScriptCode(IJavaScriptEngine engine)
+        void IScriptableObject.OnExposedToScriptCode(IScriptEngine engine)
         {
             if ((engine != null) && engineSet.TryAdd(engine))
             {
@@ -331,7 +331,7 @@
             }
         }
 
-        public void OnExposedToScriptCode(IJavaScriptEngine engine)
+        public void OnExposedToScriptCode(IScriptEngine engine)
         {
             throw new NotImplementedException();
         }

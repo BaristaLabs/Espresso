@@ -76,7 +76,7 @@
             }
         }
 
-        public static void AssertValidException(IJavaScriptEngine engine, IScriptEngineException exception, bool checkScriptStackTrace = true)
+        public static void AssertValidException(IScriptEngine engine, IScriptEngineException exception, bool checkScriptStackTrace = true)
         {
             AssertValidException(exception, checkScriptStackTrace);
             Assert.AreEqual(engine.Name, exception.EngineName);
