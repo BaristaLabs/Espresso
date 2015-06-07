@@ -54,18 +54,21 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EspressoApiAttribute.cs" />
     <Compile Include="EspressoJsonNetSerializer.cs" />
     <Compile Include="EspressoModule.cs" />
-    <Compile Include="IBarista.cs" />
     <Compile Include="EspressoEngineApplicationStartup.cs" />
+    <Compile Include="Extensions\BrewRequestExtensions.cs" />
+    <Compile Include="JsonNetSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Responses\ErrorResponse.cs" />
     <Compile Include="Responses\ErrorResponseMessage.cs" />
     <Compile Include="Responses\ScriptEngineExceptionResponse.cs" />
     <Compile Include="BaristaV1.cs" />
+    <Compile Include="Utilities\PortUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -76,6 +79,7 @@
       <Name>BaristaLabs.Espresso.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

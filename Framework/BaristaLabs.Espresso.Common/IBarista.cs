@@ -1,7 +1,5 @@
-﻿namespace BaristaLabs.Espresso.Core
+﻿namespace BaristaLabs.Espresso.Common
 {
-    using Nancy;
-
     /// <summary>
     /// Represents a Barista -- an object that is responsible for taking a request, brewing up some JavaScript and returning a result.
     /// </summary>
@@ -10,7 +8,13 @@
     /// </remarks>
     public interface IBarista
     {
-
-        Response Brew(NancyContext ctx, string virtualScriptFilePath);
+        /// <summary>
+        /// Returns a response based on the brew request.
+        /// </summary>
+        /// <remarks>
+        /// I can smell the coffee!
+        /// </remarks>
+        /// <returns></returns>
+        IBrewResponse Brew(IBrewRequest request);
     }
 }
