@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Barista Fiddle</title>
+    <link rel="shortcut icon" href="content/favicon.ico">
+    <link href="components/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="components/kendo-ui/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="components/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="components/codemirror/lib/codemirror.css" rel="stylesheet" />
+    <link href="components/codemirror/addon/dialog/dialog.css" rel="stylesheet" >
+    <link href="components/codemirror/addon/hint/show-hint.css" rel="stylesheet" >
+    <link href="components/codemirror/addon/tern/tern.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body data-ng-app="ngBaristaFiddle" class="ng-cloak">
+<div id="fiddle" data-ng-controller="MainCtrl as main">
+    <nav id="fiddle-topnav" class="navbar navbar-default" role="navigation" style="margin-bottom: 0; border-radius: 0;">
+        <div class="container-fluid">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Barista Fiddle</a>
+            <form class="navbar-form navbar-left">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" data-ng-click="evaluateScript()" data-ng-disable="model.errorCount > 0"><i class="fa fa-play"></i>&nbsp;Eval</button>
+                    <button type="button" class="btn btn-default" data-ng-click="debugScript()"><i class="fa fa-bug"></i>&nbsp;Debug</button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-default" data-ng-click="tidyUp()"><i class="fa fa-align-left"></i>&nbsp;TidyUp</button>
+                </div>
+            </form>
+            <form class="navbar-form navbar-right">
+                <div class="btn-group">
+                    <button class="btn btn-default" data-ng-click="showConfigurationDialog()"><i class="fa fa-keyboard-o"></i></button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-default" data-ng-click="showKeyboardShortcutsDialog()"><i class="fa fa-cog"></i></button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div id="fiddleTabs" data-tabset="">
+        <div data-tab="" data-ng-repeat="tab in model.tabs" active="tab.active" disable="tab.disabled" data-ng-controller="tabCtrl" data-select="tabSelected(tab)" data-deselect="tabDeselected(tab)">
+            <div data-tab-heading="">
+                <span data-ng-if="!model.isTitleEditing" data-ng-click="startEditTabTitle()" style="cursor: default;">{{tab.title}}</span>
+                <span data-ng-if="model.isTitleEditing"><input type="text" data-ng-model="$parent.tab.title"/><i class="fa fa-check" data-ng-click="endEditTabTitle()"></i></span>
+                <span data-ng-if="$parent.model.tabs.length > 1 && tab.active && !model.isTitleEditing" data-ng-click="closeTab()" style="padding-left: 10px; color: #d3d3d3;"><i class="fa fa-times-circle-o"></i></span>
+            </div>
+            <div class="k-content">
+                <div data-kendo-splitter="" data-ng-style="{ width: '100%', height: getWorkspaceHeight() }" data-k-on-resize="resizeEditor(kendoEvent)">
+                    <div>
+                        <div data-ui-codemirror="editorOptions" data-ng-model="tab.code" data-ui-refresh='tab.active' data-ng-change="tabDataChanged()"></div>
+                    </div>
+                    <div>
+                        <pre style="height: 100%; border-radius: 0;" data-focus-on="resultUpdated">{{tab.result}}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-tab="" data-ng-click="addTab()">
+            <tab-heading>
+                <i class="fa fa-plus"></i>
+            </tab-heading>
+        </div>
+    </div>
+</div>
+
+<script src="components/jquery/dist/jquery.min.js"></script>
+<script src="components/lodash/lodash.min.js"></script>
+<script src="components/js-beautify/js/lib/beautify.js"></script>
+<script src="components/angular/angular.min.js"></script>
+<script src="components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js"></script>
+<script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="components/ng-focus-on/ng-focus-on.min.js"></script>
+<script src="components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+<script src="components/kendo-ui/js/kendo.ui.core.min.js"></script>
+<script src="components/codemirror/lib/codemirror.js"></script>
+<script src="components/codemirror/mode/javascript/javascript.js"></script>
+<script src="components/codemirror/addon/dialog/dialog.js"></script>
+<script src="components/codemirror/addon/hint/show-hint.js"></script>
+<script src="components/codemirror/addon/tern/tern.js"></script>
+<script src="components/angular-ui-codemirror/ui-codemirror.min.js"></script>
+
+<script src="vendor/acorn/acorn.js"></script>
+<script src="vendor/acorn/acorn_loose.js"></script>
+<script src="vendor/acorn/walk.js"></script>
+<script src="vendor/tern/polyfill.js"></script>
+<script src="vendor/tern/signal.js"></script>
+<script src="vendor/tern/tern.js"></script>
+<script src="vendor/tern/def.js"></script>
+<script src="vendor/tern/comment.js"></script>
+<script src="vendor/tern/infer.js"></script>
+<script src="vendor/tern/plugin/doc_comment.js"></script>
+
+<script src="js/ngBaristaFiddle.js"></script>
+<script src="js/tabController.js"></script>
+
+</body>
+</html>

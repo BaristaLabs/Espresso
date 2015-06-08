@@ -9,9 +9,12 @@
     {
         static void Main(string[] args)
         {
-            using (var host = new NancyHost(new Uri("http://localhost:1234")))
+            var baseUri = new Uri("http://localhost:1234");
+
+            using (var host = new NancyHost(baseUri))
             {
                 host.Start();
+                Console.WriteLine("Espresso listening on " + baseUri);
                 Console.ReadLine();
             }
         }
