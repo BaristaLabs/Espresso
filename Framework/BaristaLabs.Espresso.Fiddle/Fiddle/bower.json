@@ -1,0 +1,23 @@
+{
+  "name": "espresso-fiddle",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular-latest": "latest",
+    "angular-ui-bootstrap-bower": "latest",
+    "angular-local-storage": "latest",
+    "bootstrap": "latest",
+    "fontawesome": "latest",
+    "jquery": "latest",
+    "kendo-ui": "latest",
+    "lodash": "latest",
+    "js-beautify": "https://github.com/beautify-web/js-beautify.git#1.5.4",
+    "ng-focus-on": "latest",
+    "moment": "~2.10.0",
+    "angular-ui-router": "~0.2.13",
+    "codemirror": "~5.1.0",
+    "angular-ui-codemirror": "~0.2.3"
+  },
+  "resolutions": {
+    "codemirror": "~5.1.0"
+  }
+}

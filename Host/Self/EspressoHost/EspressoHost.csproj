@@ -75,6 +75,10 @@
       <Project>{6806da14-9165-4b56-b97c-d1f617004787}</Project>
       <Name>BaristaLabs.Espresso.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\BaristaLabs.Espresso.Fiddle\BaristaLabs.Espresso.Fiddle.csproj">
+      <Project>{9ba6d3c2-b087-4d6e-9b2f-33f5dc3d4b9a}</Project>
+      <Name>BaristaLabs.Espresso.Fiddle</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
