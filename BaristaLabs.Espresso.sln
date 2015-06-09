@@ -54,7 +54,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaristaLabs.Espresso.Engine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaristaLabs.Espresso.SharePoint", "Host\SharePoint\BaristaLabs.Espresso.SharePoint\BaristaLabs.Espresso.SharePoint.csproj", "{1D9D1B2A-EA08-44EA-86BD-4A1B0D28DBEF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaristaLabs.Espresso.Engine.V8.Native", "Engine\v8\BaristaLabs.Espresso.Engine.V8.Native\BaristaLabs.Espresso.Engine.V8.Native.vcxproj", "{CDCF4EEA-1CA4-412E-8C77-78893A67A577}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Espresso.Engine.V8.Native", "Engine\v8\BaristaLabs.Espresso.Engine.V8.Native\BaristaLabs.Espresso.Engine.V8.Native.vcxproj", "{CDCF4EEA-1CA4-412E-8C77-78893A67A577}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Self", "Self", "{925D7283-066E-405D-BB6F-32BD4ED7A066}"
 EndProject
@@ -62,7 +62,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EspressoHost", "Host\Self\E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaristaLabs.Espresso.Fiddle", "Framework\BaristaLabs.Espresso.Fiddle\BaristaLabs.Espresso.Fiddle.csproj", "{9BA6D3C2-B087-4D6E-9B2F-33F5DC3D4B9A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Filesystem", "Filesystem", "{7855B861-DDAA-4D0A-BE19-CDC39C7D4611}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileSystem", "FileSystem", "{7855B861-DDAA-4D0A-BE19-CDC39C7D4611}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaristaLabs.Espresso.FileSystem.PhysicalFileSystem", "FileSystem\BaristaLabs.Espresso.FileSystem.PhysicalFileSystem\BaristaLabs.Espresso.FileSystem.PhysicalFileSystem.csproj", "{F5E4D20D-2140-47A1-956A-4719BEA90652}"
 EndProject
