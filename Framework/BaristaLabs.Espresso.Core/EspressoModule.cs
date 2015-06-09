@@ -1,9 +1,12 @@
 ﻿namespace BaristaLabs.Espresso.Core
 {
     using Common;
+    using FileSystem;
+
     using Ninject.Modules;
     using Ninject.Extensions.Conventions;
     using System.Linq;
+    using System;
 
     public class EspressoModule : NinjectModule
     {
@@ -53,6 +56,26 @@
                               c.WithMetadata("Espresso-Script-Engine-Type", scriptEngineFactoryAttribute.ScriptEngineType);
                       })
                   );
+
+            //Bind FileSystem related stuff
+            Kernel.Bind(x => x
+                .FromAssembliesInPath(@".\FileSystem\")
+                .SelectAllClasses()
+                .InheritedFrom<IFileSystem>()
+                .BindAllInterfaces()
+                .Configure((c, fileSystemType) =>
+                    {
+                        var fileSystemAttribute = fileSystemType.GetCustomAttributes(false).OfType<FileSystemAttribute>().FirstOrDefault();
+                        if (fileSystemAttribute == null)
+                            throw new InvalidOperationException("Concrete implementations of IFileSystem must be decorated with a FileSystemAttribute. " + fileSystemType);
+
+                        c.WithMetadata("Espresso-File-System-Prefix", fileSystemAttribute.Prefix);
+                    })
+                );
+
+            Kernel.Bind<FileSystemsManager>()
+                .ToSelf()
+                .InSingletonScope();
         }
     }
 }

@@ -4,7 +4,7 @@
     using Nancy.Bootstrappers.Ninject;
     using Ninject;
 
-    public class BaristaLabsHostBootstrapper : NinjectNancyBootstrapper
+    public class EspressoHostBootstrapper : NinjectNancyBootstrapper
     {
         protected override void ConfigureApplicationContainer(IKernel existingContainer)
         {

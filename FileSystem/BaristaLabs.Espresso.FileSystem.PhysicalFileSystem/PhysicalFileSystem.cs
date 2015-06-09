@@ -10,6 +10,7 @@
     /// <summary>
     /// Represents a IFileSystem implementation using the local physical file system.
     /// </summary>
+    [FileSystem("local")]
     public class PhysicalFileSystem : IFileSystem
     {
         // These are restricted file names on Windows, regardless of extension.

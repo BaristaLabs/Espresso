@@ -1,15 +1,9 @@
 ﻿namespace BaristaLabs.Espresso.FileSystem
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public interface IFileSystem
     {
-        string Prefix
-        {
-            get;
-        }
-
         /// <summary>
         /// Enumerate a directory at the given path, if any
         /// </summary>

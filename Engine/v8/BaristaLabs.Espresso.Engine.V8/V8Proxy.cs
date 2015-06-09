@@ -124,7 +124,7 @@ namespace BaristaLabs.Espresso.Engine.V8
 
             try
             {
-                return Assembly.Load("BaristaLabs.Espresso.Engine.V8.Native");
+                return Assembly.Load("Espresso.Engine.V8.Native");
             }
             catch (FileNotFoundException)
             {

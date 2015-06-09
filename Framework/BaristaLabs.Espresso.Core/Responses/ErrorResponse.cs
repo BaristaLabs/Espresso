@@ -6,10 +6,10 @@
 
     public class ErrorResponse : JsonResponse<ErrorResponseMessage>
     {
-        public ErrorResponse(string message)
+        public ErrorResponse(string message, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
             : base(new ErrorResponseMessage(message), EspressoJsonNetSerializer.Default.Value)
         {
-            StatusCode = HttpStatusCode.BadRequest;
+            StatusCode = statusCode;
         }
 
         public ErrorResponse(string message, IEnumerable<string> errors)

@@ -63,7 +63,7 @@
     <Compile Include="EspressoEngineApplicationStartup.cs" />
     <Compile Include="Extensions\BrewRequestExtensions.cs" />
     <Compile Include="FileSystemsManager.cs" />
-    <Compile Include="FilesModule.cs" />
+    <Compile Include="FileSystemModule.cs" />
     <Compile Include="JsonNetSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Responses\ErrorResponse.cs" />
