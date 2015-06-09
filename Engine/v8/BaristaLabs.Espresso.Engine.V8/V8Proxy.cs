@@ -133,7 +133,7 @@ namespace BaristaLabs.Espresso.Engine.V8
             var hLibrary = LoadNativeLibrary();
             try
             {
-                var fileName = "BaristaLabs.Espresso.Engine.V8.Native.dll";
+                var fileName = "Espresso.Engine.V8.Native.dll";
                 var messageBuilder = new StringBuilder();
 
                 var paths = GetDirPaths().Select(dirPath => Path.Combine(dirPath, deploymentDirName, fileName)).Distinct();

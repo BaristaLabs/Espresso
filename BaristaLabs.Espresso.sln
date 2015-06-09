@@ -62,6 +62,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EspressoHost", "Host\Self\E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaristaLabs.Espresso.Fiddle", "Framework\BaristaLabs.Espresso.Fiddle\BaristaLabs.Espresso.Fiddle.csproj", "{9BA6D3C2-B087-4D6E-9B2F-33F5DC3D4B9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Filesystem", "Filesystem", "{7855B861-DDAA-4D0A-BE19-CDC39C7D4611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaristaLabs.Espresso.FileSystem.PhysicalFileSystem", "FileSystem\BaristaLabs.Espresso.FileSystem.PhysicalFileSystem\BaristaLabs.Espresso.FileSystem.PhysicalFileSystem.csproj", "{F5E4D20D-2140-47A1-956A-4719BEA90652}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,6 +174,18 @@ Global
 		{9BA6D3C2-B087-4D6E-9B2F-33F5DC3D4B9A}.Release|x64.Build.0 = Release|Any CPU
 		{9BA6D3C2-B087-4D6E-9B2F-33F5DC3D4B9A}.Release|x86.ActiveCfg = Release|Any CPU
 		{9BA6D3C2-B087-4D6E-9B2F-33F5DC3D4B9A}.Release|x86.Build.0 = Release|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Debug|x64.Build.0 = Debug|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Debug|x86.Build.0 = Debug|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Release|x64.ActiveCfg = Release|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Release|x64.Build.0 = Release|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Release|x86.ActiveCfg = Release|Any CPU
+		{F5E4D20D-2140-47A1-956A-4719BEA90652}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -193,5 +209,7 @@ Global
 		{925D7283-066E-405D-BB6F-32BD4ED7A066} = {CE7EB950-478A-4F33-A451-F79411DB1529}
 		{23C6533B-09CB-4522-88A9-2289914C2C08} = {925D7283-066E-405D-BB6F-32BD4ED7A066}
 		{9BA6D3C2-B087-4D6E-9B2F-33F5DC3D4B9A} = {F317FF4A-0D79-4B8C-A621-DE1CDEFDEA4F}
+		{7855B861-DDAA-4D0A-BE19-CDC39C7D4611} = {F317FF4A-0D79-4B8C-A621-DE1CDEFDEA4F}
+		{F5E4D20D-2140-47A1-956A-4719BEA90652} = {7855B861-DDAA-4D0A-BE19-CDC39C7D4611}
 	EndGlobalSection
 EndGlobal

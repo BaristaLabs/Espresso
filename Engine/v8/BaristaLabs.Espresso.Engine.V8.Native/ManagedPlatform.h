@@ -77,8 +77,8 @@
 // assembly references
 //-----------------------------------------------------------------------------
 
-#using "BaristaLabs.Espresso.Common.dll" as_friend
-#using "BaristaLabs.Espresso.Engine.V8.dll" as_friend
+#using "Espresso.Common.dll" as_friend
+#using "Espresso.Engine.V8.dll" as_friend
 
 //-----------------------------------------------------------------------------
 // namespace references

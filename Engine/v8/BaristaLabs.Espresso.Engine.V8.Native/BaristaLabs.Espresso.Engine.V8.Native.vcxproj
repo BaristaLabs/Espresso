@@ -16,7 +16,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>BaristaLabs.Espresso.Engine.V8.Native</RootNamespace>
-    <ProjectName>BaristaLabs.Espresso.Engine.V8.Native</ProjectName>
+    <ProjectName>Espresso.Engine.V8.Native</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -46,11 +46,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\Engine\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\Engine\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="Exists('$(SolutionDir)Espresso.snk')">
     <LinkKeyFile>$(SolutionDir)Espresso.snk</LinkKeyFile>
@@ -67,7 +67,7 @@
       </PrecompiledHeaderOutputFile>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalUsingDirectories>$(OutDir)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>$(SolutionDir)bin\$(Configuration);$(OutDir)</AdditionalUsingDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <TreatWarningAsError>true</TreatWarningAsError>
       <SDLCheck>true</SDLCheck>
@@ -85,7 +85,7 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\V8\include;..\Exports;$(IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\V8\include;..\Exports;$(IncludePath);$(SolutionDir)bin\$(Configuration)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>

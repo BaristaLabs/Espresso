@@ -24,7 +24,7 @@
 
             ///Bind any IScriptEngineFactory instances in the path.
             Kernel.Bind(x => x
-                  .FromAssembliesInPath(".")
+                  .FromAssembliesInPath(@".\Engine\")
                   .SelectAllClasses()
                   .InheritedFrom<IScriptEngineFactory>()
                   .BindAllInterfaces()
@@ -40,7 +40,7 @@
 
             //Bind any IDebugScriptEngineFactory instances in the path.
             Kernel.Bind(x => x
-                  .FromAssembliesInPath(".")
+                  .FromAssembliesInPath(@".\Engine\")
                   .SelectAllClasses()
                   .InheritedFrom<IDebugScriptEngineFactory>()
                   .BindAllInterfaces()
