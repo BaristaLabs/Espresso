@@ -85,14 +85,14 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\V8\include;..\Exports;$(IncludePath);$(SolutionDir)bin\$(Configuration)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\V8\include;..\Exports;$(IncludePath)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>
       </PrecompiledHeaderOutputFile>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalUsingDirectories>$(OutDir)</AdditionalUsingDirectories>
+      <AdditionalUsingDirectories>$(SolutionDir)bin\$(Configuration);$(OutDir)</AdditionalUsingDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <TreatWarningAsError>true</TreatWarningAsError>
       <SDLCheck>true</SDLCheck>
