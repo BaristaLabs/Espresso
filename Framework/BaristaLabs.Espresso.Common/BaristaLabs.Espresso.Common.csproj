@@ -51,6 +51,7 @@
     <Compile Include="ContinuationCallback.cs" />
     <Compile Include="Cookie.cs" />
     <Compile Include="FileSystem\FileSystemAttribute.cs" />
+    <Compile Include="IAppCatalog.cs" />
     <Compile Include="IApplication.cs" />
     <Compile Include="IBarista.cs" />
     <Compile Include="IBrewRequest.cs" />

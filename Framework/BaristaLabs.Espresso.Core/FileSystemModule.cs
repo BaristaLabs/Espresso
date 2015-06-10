@@ -1,12 +1,8 @@
 ﻿namespace BaristaLabs.Espresso.Core
 {
     using Responses;
-    using FileSystem;
     using Nancy;
-    using System;
     using Ninject;
-
-
 
     /// <summary>
     /// Module used to interact with IFileSystem implementation.

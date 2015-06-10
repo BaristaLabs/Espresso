@@ -18,7 +18,7 @@
 
             Get["/fiddle/{file*}"] = p =>
             {
-                string path = string.Format("Fiddle/{0}", p.file);
+                string path = string.Format("./Fiddle/{0}", p.file);
                 return Response.AsFile(path);
             };
         }
